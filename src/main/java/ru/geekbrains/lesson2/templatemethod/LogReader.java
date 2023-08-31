@@ -1,6 +1,7 @@
-package ru.geekbrains.lesson2;
+package ru.geekbrains.lesson2.templatemethod;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Основа работы алгоритма чтения данных
@@ -14,7 +15,11 @@ public abstract class LogReader {
         this.currentPosition = currentPosition;
     }
     public Iterable<LogEntry> readLogEntry(){
-        List<LogEntry> logList = new ArrayList<>()
+        List<LogEntry> logList = new ArrayList<>();
+        for (String str : readEntries(currentPosition)) {
+            logList.add(parseLogEntry(str));
+        }
+        return logList;
     }
     public abstract Object getDataSource();
     public abstract void setDataSource(Object data);

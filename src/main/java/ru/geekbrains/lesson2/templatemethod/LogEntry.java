@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson2;
+package ru.geekbrains.lesson2.templatemethod;
 
 /**
  * Запись лога
